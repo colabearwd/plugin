@@ -50,9 +50,11 @@ def cmd_get_res(curl_dict):
                 curl_dict['args_ipversion'] = "6"
                 VERSION = 'curl6'
 
-#        cmd = "curl -o /dev/null -"+curl_dict['args_ipversion']+" -o -s -w %{http_code}:%{http_connect}:%{time_namelookup}:%{time_redirect}:%{time_pretransfer}:%{time_connect}:%{time_starttransfer}:%{time_total}:%{speed_download} "+curl_dict['args_url']
-	cmd = "curl -"+ curl_dict['args_ipversion']+" -o /dev/null -s -w %{http_code}:%{http_connect}:%{time_namelookup}:%{time_redirect}:%{time_pretransfer}:%{time_connect}:%{time_starttransfer}:%{time_total}:%{speed_download} "+curl_dict['args_url'] 
-        print cmd
+        curl_dict['args_timeout']=str(curl_dict['args_timeout'])
+
+
+        cmd = "curl -"+ curl_dict['args_ipversion']+" -o /dev/null --connect-timeout "+curl_dict['args_timeout']+" -s -w %{http_code}:%{http_connect}:%{time_namelookup}:%{time_redirect}:%{time_pretransfer}:%{time_connect}:%{time_starttransfer}:%{time_total}:%{speed_download} "+curl_dict['args_url']
+       print cmd
         status ,output = commands.getstatusoutput(cmd)
  #       print output
 	return output.split(":")
