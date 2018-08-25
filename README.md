@@ -1,10 +1,12 @@
 # plugin
-please put this folder in plugin 
+Please put this folder in plugin.
+You can use git to get this repository.
 
-This is the repository about the timing script.
+This is the repository about the timing script.This is repository is long-time timing script.We use ping & curl to get the result, and return the result to the server.
 
 # get-args
-this folder include the script get the args from the server.
+this folder include the script get the args-list from the server.
+those script put args-list in */opt* folder
 
 
 # ubuntu-plugin
