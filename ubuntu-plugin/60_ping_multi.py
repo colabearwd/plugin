@@ -43,17 +43,12 @@ def cmd_get_res(ping_dict):
                 ping_dict['args_ipversion'] = "ping6"
                 VERSION = 'ipv6'
 
-        cmd = "{0} -s {1} -c {2} -W {3} -q {4} ".format(ping_dict['args_ipversion'],ping_dict['args_packagesize'],ping_dict['args_count'],ping_dict['args_timeout'],ping_dict['args_url'])
-#	print cmd
-        status ,output = commands.getstatusoutput(cmd)
+    cmd = "{0} -s {1} -c {2} -W {3} -q {4} ".format(ping_dict['args_ipversion'],ping_dict['args_packagesize'],ping_dict['args_count'],ping_dict['args_timeout'],ping_dict['args_url'])
+	print cmd
+    status ,output = commands.getstatusoutput(cmd)
 #	print output
 #	print status
 
-#	cmd1 = "tail -2 {0}".format(output)
-#	print cmd1
-#	status1 ,output1 = commands.getstatusoutput(cmd1)
-#        print output1
-#       print status1
 	if (status == 512):
 		print URL+" <==== We dont know this host !!!"
 		return 512

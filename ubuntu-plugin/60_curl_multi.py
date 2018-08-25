@@ -42,7 +42,7 @@ def load_data(curl_dict,res):
 
 def cmd_get_res(curl_dict):
 
-	print curl_dict
+#	print curl_dict
         if ( curl_dict['args_ipversion'] == 0 ):
                 curl_dict['args_ipversion'] = "4"
                 VERSION = 'curl4'
@@ -56,7 +56,7 @@ def cmd_get_res(curl_dict):
 	cmd = "curl -"+ curl_dict['args_ipversion']+" -o /dev/null --connect-timeout "+curl_dict['args_timeout']+" -s -w %{http_code}:%{http_connect}:%{time_namelookup}:%{time_redirect}:%{time_pretransfer}:%{time_connect}:%{time_starttransfer}:%{time_total}:%{speed_download} "+curl_dict['args_url'] 
         print cmd
         status ,output = commands.getstatusoutput(cmd)
- #       print output
+ #      print output
 	return output.split(":")
 
 
