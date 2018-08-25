@@ -51,10 +51,14 @@ def cmd_get_res(ping_dict):
 
 	if (status == 512):
 		print URL+" <==== We dont know this host !!!"
-		return 512
+		res = [-1 , -1, -1]
+		return res
+#		return 512
 	elif (status == 256):
 		print URL+" <==== We cant reach this host !!!"
-		return 256
+		res = [-2 , -2, -2]
+		return res
+#		return 256
 	elif (status == 0):
 	        temp1 = re.search(r"received, \d+\.?\d{0,3}% packet loss",output)
 #		print temp1.group()
