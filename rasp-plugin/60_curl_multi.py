@@ -24,7 +24,7 @@ def load_data(curl_dict, res):
     getuname = "uname -n"
     status, UNAME = commands.getstatusoutput(getuname)
     ts = int(time.time())
-    metriclist = ['http_code','http_connect','time_namelookup','time_redirect','time_pretransfer','time_connect','time_starttransfer','time_total','speed_download']
+    metriclist = ['curl.http_code','curl.http_connect','curl.time_namelookup','curl.time_redirect','curl.time_pretransfer','curl.time_connect','curl.time_starttransfer','curl.time_total','curl.speed_download']
 
     for (metric, re) in zip(metriclist, res):
         item = {"metric": metric, "endpoint": UNAME, "tags": "target="+URL+",ip-version=" +
