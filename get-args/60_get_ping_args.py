@@ -8,8 +8,8 @@ import requests
 
 def getUrlJson():
     try:
-        url = "http://*.*.*.*:3456/api/ping"
-        data1 = requests.get(url)
+        push_url = "http://1.1.1.1:3456/api/ping"
+        data1 = requests.get(push_url)
     #       print data1.text
 
         return data1.text

@@ -111,7 +111,7 @@ if __name__ == '__main__':
     设置需要传送数据到哪个ip：port
     多线程运行配置文件列表中的文件    
     """
-    push_url = "http://1.1.1.1:1988/vi/push"
+    push_url = "http://1.1.1.1:1988/v1/push"
     process = 8
 
     pinglists = getconfig()
