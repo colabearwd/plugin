@@ -11,10 +11,10 @@ def load_data(humidity, temperature):
     getuname = "uname -n"
     status ,UNAME = commands.getstatusoutput(getuname)
     if humidity is not None:
-        humidity_data = {"endpoint": UNAME ,"metric": UNAME+".humidity","timestamp": ts ,"step":60,"value": humidity ,"counterType":"GAUGE","tags":"module=dht11"} 
+        humidity_data = {"endpoint": UNAME ,"metric": "DHT11.humidity","timestamp": ts ,"step":60,"value": humidity ,"counterType":"GAUGE","tags":"module=dht11"} 
         payload.append(copy.copy(humidity_data)) 
     if temperature is not None: 
-        temperature_data = {"endpoint":UNAME,"metric": UNAME+".temperature","timestamp":ts,"step":60,"value":temperature,"counterType":"GAUGE","tags":"module=dht11"} 
+        temperature_data = {"endpoint":UNAME,"metric": "DHT11.temperature","timestamp":ts,"step":60,"value":temperature,"counterType":"GAUGE","tags":"module=dht11"} 
         payload.append(copy.copy(temperature_data)) 
 
 
