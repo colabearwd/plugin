@@ -4,11 +4,13 @@ import types
 #import urllib2
 import json
 import requests
-
+import sys
+sys.path.append("..")
+import config
 
 def getUrlJson():
     try:
-        push_url = "http://1.1.1.1:3456/api/ping"
+        push_url = "http://{}:3456/api/ping".format(config.falcon_config['api_ip'])
         data1 = requests.get(push_url)
     #       print data1.text
 

@@ -10,7 +10,9 @@ import json
 import requests
 import re
 from multiprocessing.dummy import Pool as ThreadPool
-
+import sys
+sys.path.append("..")
+import config
 
 def load_data(ping_dict, res):
     """
@@ -111,7 +113,7 @@ if __name__ == '__main__':
     设置需要传送数据到哪个ip：port
     多线程运行配置文件列表中的文件    
     """
-    push_url = "http://1.1.1.1:1988/vi/push"
+    push_url = "http://{}:1988/vi/push".format(config.falcon_config['api_ip'])
     process = 8
 
     pinglists = getconfig()

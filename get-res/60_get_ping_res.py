@@ -4,18 +4,23 @@ import time
 import requests
 import json
 import pymysql
+import sys
+sys.path.append("..")
+import config
 
 
-name = "root"
-password = "root"
-api_addr = "http://1.1.1.1:8080/api/v1"
+
+name = config.falcon_config['name']
+password = config.falcon_config['password']
+api_addr = config.falcon_config['api_addr']
+api_ip = config.falcon_config['api_ip']
 
 
 config={
-    "host":"127.0.0.1",
-    "user":"mysql_account",
-    "password":"mysql_passwd",
-    "database":"mysql_database"
+    "host":config.mysql_config['host'],
+    "user":config.mysql_config['user'],
+    "password":config.mysql_config['password'],
+    "database":config.mysql_config['database']
 }
 
 def insert_data(res_list):
@@ -65,7 +70,7 @@ def get_list(flag):
 
     h = {
         "Apitoken": Apitoken,
-        "X-Forwarded-For": "1.1.1.1"
+        "X-Forwarded-For": api_ip
     }
 
     d = {
@@ -117,7 +122,7 @@ def get_endpoint_counter(eidlist, metriclist):
     }
     h = {
         "Apitoken": Apitoken,
-        "X-Forwarded-For": "1.1.1.1"
+        "X-Forwarded-For": api_ip
     }
     r = requests.get("%s/graph/endpoint_counter" % (api_addr,), params=d, headers=h)
     if r.status_code != 200:
@@ -148,7 +153,7 @@ def func2():
     h = {
         "Apitoken": Apitoken,
         "Content-type": "application/json;charset=utf-8",
-        "X-Forwarded-For": "1.1.1.1"
+        "X-Forwarded-For": api_ip
     }
     namelist = get_list(0)
     counterlist = get_counterlist("ping.average_time")

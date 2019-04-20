@@ -8,7 +8,7 @@ This is the repository about the timing script.This is repository is long-time t
 ```
 project
 │   README.md   
-│	autochange.sh
+│	auto.sh
 └───get-args
 │   60_get_curl_args.py  
 │   60_get_ping_args.py  
@@ -30,8 +30,11 @@ project
 
 
 # What script in these folder 
-##autochange.sh
+##auto.sh
 change the script ip,can auto make this folder script 
+
+##config.py
+you need to modify this file,for other script to use
 
 ## get-args folder
 this folder include the script get the args-list from the server.  

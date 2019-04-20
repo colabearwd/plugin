@@ -6,6 +6,11 @@ import json
 import requests 
 import copy 
 import commands
+import sys
+sys.path.append("..")
+import config
+
+
 
 def load_data(humidity, temperature):
     getuname = "uname -n"
@@ -22,7 +27,7 @@ if __name__ == '__main__':
     sensor = Adafruit_DHT.DHT11 
     humidity, temperature = Adafruit_DHT.read_retry(sensor, 04) 
     ts = int(time.time()) 
-    push_url = "http://1.1.1.1:1988/v1/push" 
+    push_url = "http://{}:1988/v1/push",format(config.falcon_config['api_ip']) 
     payload = [] 
     load_data(humidity, temperature)
 

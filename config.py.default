@@ -1,0 +1,15 @@
+
+falcon_config={
+	"name":"openfalocn_account",
+	"password":"openfalcon_passwd",
+	"api_addr":"http://{server_ip}:8080/api/v1",
+	"api_ip":"{server_ip}"
+}
+
+
+mysql_config={
+	"host":"127.0.0.1",
+	"user":"mysql_user",
+	"password":"mysql_passwd",
+	"database":"database_example{myproject}"
+}
