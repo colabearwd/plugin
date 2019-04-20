@@ -12,6 +12,10 @@ project
 └───get-args
 │   60_get_curl_args.py  
 │   60_get_ping_args.py  
+|
+└───get-res
+|   60_get_curl_res.py   
+|   60_get_ping_res.py
 │   
 └───ubuntu-plugin
 │   60_curl_multi.py  
@@ -33,9 +37,11 @@ change the script ip,can auto make this folder script
 this folder include the script get the args-list from the server.  
 those script put args-list in */opt* folder
 
+## get-res folder
+this folder include script transfer the open-falcon data to myproject database
+
 ## ubuntu-plugin folder
 this folder inculde the script can run in ubuntu-server
-
 
 ## rasp-plugin folder
 this folder inculde the script can run in rasp-client
