@@ -5,7 +5,6 @@ import types
 import json
 import requests
 import sys
-sys.path.append("..")
 import config
 
 def getUrlJson():
