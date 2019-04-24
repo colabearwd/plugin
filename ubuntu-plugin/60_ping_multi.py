@@ -11,7 +11,6 @@ import requests
 import re
 from multiprocessing.dummy import Pool as ThreadPool
 import sys
-sys.path.append("..")
 import config
 
 def load_data(ping_dict, res):

@@ -5,7 +5,6 @@ import requests
 import json
 import pymysql
 import sys
-sys.path.append("..")
 import config
 
 
